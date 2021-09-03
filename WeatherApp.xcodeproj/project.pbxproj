@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8CADF82926E200E700410FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF82826E200E700410FD9 /* AppDelegate.swift */; };
 		8CADF82B26E200E700410FD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF82A26E200E700410FD9 /* SceneDelegate.swift */; };
-		8CADF82D26E200E700410FD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CADF82C26E200E700410FD9 /* ViewController.swift */; };
 		8CADF83026E200E700410FD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CADF82E26E200E700410FD9 /* Main.storyboard */; };
 		8CADF83226E200E800410FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CADF83126E200E800410FD9 /* Assets.xcassets */; };
 		8CADF83526E200E800410FD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CADF83326E200E800410FD9 /* LaunchScreen.storyboard */; };
@@ -38,7 +37,6 @@
 		8CADF82526E200E700410FD9 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CADF82826E200E700410FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CADF82A26E200E700410FD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8CADF82C26E200E700410FD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8CADF82F26E200E700410FD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CADF83126E200E800410FD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CADF83426E200E800410FD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +74,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C8AD50326E205DC008FBF8F /* WeatherList */ = {
+			isa = PBXGroup;
+			children = (
+				8C8AD50526E20618008FBF8F /* Data */,
+				8C8AD50626E20618008FBF8F /* DI */,
+				8C8AD50826E20618008FBF8F /* Domain */,
+				8C8AD50726E20618008FBF8F /* Presentation */,
+			);
+			path = WeatherList;
+			sourceTree = "<group>";
+		};
+		8C8AD50426E205DC008FBF8F /* WeatherDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WeatherDetails;
+			sourceTree = "<group>";
+		};
+		8C8AD50526E20618008FBF8F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8C8AD50626E20618008FBF8F /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		8C8AD50726E20618008FBF8F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8C8AD50826E20618008FBF8F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		8CADF81C26E200E700410FD9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +143,10 @@
 		8CADF82726E200E700410FD9 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				8C8AD50426E205DC008FBF8F /* WeatherDetails */,
+				8C8AD50326E205DC008FBF8F /* WeatherList */,
 				8CADF82826E200E700410FD9 /* AppDelegate.swift */,
 				8CADF82A26E200E700410FD9 /* SceneDelegate.swift */,
-				8CADF82C26E200E700410FD9 /* ViewController.swift */,
 				8CADF82E26E200E700410FD9 /* Main.storyboard */,
 				8CADF83126E200E800410FD9 /* Assets.xcassets */,
 				8CADF83326E200E800410FD9 /* LaunchScreen.storyboard */,
@@ -258,7 +303,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CADF82D26E200E700410FD9 /* ViewController.swift in Sources */,
 				8CADF82926E200E700410FD9 /* AppDelegate.swift in Sources */,
 				8CADF82B26E200E700410FD9 /* SceneDelegate.swift in Sources */,
 			);
