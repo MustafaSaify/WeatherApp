@@ -38,15 +38,16 @@ class WeatherForecastRepositoryTests: XCTestCase {
         XCTAssertFalse(remoteDatasource.fetchForecastCalled)
     }
     
-    func testLocalDatasourceReturnsNilWhenDataDoestExists() throws {
+    func testRepositoryReturnsDataFromRemoteDatasourceWhenCacheIsNotAvailable() throws {
         // Given
         let city = "TestCity1"
         
         // When
-        let cached = localDatasource.getForecast(city: city)
+        repository.fetchWeatherForecast(city: city) { (result) in }
         
         // Then
-        XCTAssertNil(cached)
+        XCTAssertTrue(localDatasource.getForecastCalled)
+        XCTAssertTrue(remoteDatasource.fetchForecastCalled)
     }
 
     func testPerformanceExample() throws {
