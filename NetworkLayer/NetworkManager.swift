@@ -24,11 +24,20 @@ class NetworkManager: NetworkContractor {
                 completion(Result.failure(NetworkError.serverError(_error)))
                 return
             }
-            guard let data = data, let response = try? JSONDecoder().decode(T.self, from: data) else {
-                completion(Result.failure(NetworkError.invalidData))
-                return
+            do{
+                let response = try JSONDecoder().decode(T.self, from: data!)
+                completion(Result.success(response))
             }
-            completion(Result.success(response))
+            catch(let error) {
+                print(error)
+                completion(Result.failure(NetworkError.invalidData))
+            }
+            
+//            guard let data = data, let response = try? JSONDecoder().decode(T.self, from: data) else {
+//                completion(Result.failure(NetworkError.invalidData))
+//                return
+//            }
+//            completion(Result.success(response))
         }.resume()
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol WeatherForecastRemoteDatasourceContractor {
-    func fetchWeatherForecast(city: String, completion: @escaping (Result<Forecast, Error>) -> Void)
+    func fetchWeatherForecast(city: String, completion: @escaping (Result<ForecastResponse, Error>) -> Void)
 }
 
 class WeatherForecastRemoteDatasource: WeatherForecastRemoteDatasourceContractor {
@@ -23,7 +23,7 @@ class WeatherForecastRemoteDatasource: WeatherForecastRemoteDatasourceContractor
         self.networkManager = networkManager
     }
     
-    func fetchWeatherForecast(city: String, completion: @escaping (Result<Forecast, Error>) -> Void) {
+    func fetchWeatherForecast(city: String, completion: @escaping (Result<ForecastResponse, Error>) -> Void) {
         let request = WeatherForecastNetworkRequest(baseUrl: baseUrl, apiKey: apiKey, city: city)
         networkManager.sendRequest(request: request, completion: completion)
     }

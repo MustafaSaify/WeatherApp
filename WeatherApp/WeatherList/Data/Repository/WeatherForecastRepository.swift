@@ -30,12 +30,12 @@ class WeatherForecastRepository: WeatherForecastRepositoryContractor {
         }
         remoteDatasource.fetchWeatherForecast(city: city) { [weak self] (result) in
             switch result {
-            case .success(let forecast):
-                self?.localDatasource?.setForecast(city: city, forecast: forecast)
-            default:
-                break
+            case .success(let response):
+                self?.localDatasource?.setForecast(city: city, forecast: response.forecast)
+                completion(Result.success(response.forecast))
+            case .failure(let error):
+                completion(Result.failure(error))
             }
-            completion(result)
         }
     }
 }
